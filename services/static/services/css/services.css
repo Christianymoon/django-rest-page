@@ -1,0 +1,28 @@
+.card-services {
+    width: 264px;
+    background: var(--gold);
+    margin-top: 40px;
+    border-radius: 20px;
+    margin-right: auto;
+}
+
+.card-services img {
+    border-radius: 20px;
+}
+
+.menu-ref {
+    margin-top: 30px;
+    background: var(--gold);
+    color: var(--red-brown);
+}
+
+.menu-ref:hover {
+    background: var(--white-total);
+    color: var(--gold);
+}
+
+@media screen and (max-width: 767px) {
+    .card-services {
+        width: auto;
+    }
+}

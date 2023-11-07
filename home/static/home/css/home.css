@@ -1,0 +1,108 @@
+.main-photo img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  opacity: 0.5;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+}
+
+.hero-item {
+  color: var(--white-total);
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.icon img {
+  width: 120px;
+  height: auto;
+}
+
+.button-main {
+  text-decoration: none;
+  color: var(--white-total);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--red-brown);
+  width: 165px;
+  height: 51px;
+  border-radius: 20px;
+  transition: all 1s ease;
+}
+
+.button-main:hover {
+  color: var(--red-brown);
+  background: var(--gold);
+}
+
+.recent-recipes {
+  margin-top: 90px;
+}
+
+.recipe-card {
+  text-decoration: none;
+  color: var(--gold);
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.recipe-card .card {
+  border-radius: 20px;
+  background: var(--red-brown);
+  transition: all 1s ease;
+}
+
+.image-card {
+  height: 300px;  
+}
+
+.recipe-card img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+ 
+.recipe-card .card-body {
+  padding: 10px;
+} 
+
+.recipe-card .card:hover {
+  color: var(--red-brown);
+  background: var(--gold);
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .main-photo {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    
+  }
+
+  .main-photo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+
+  .hero {
+    position: relative;
+  }
+
+  .recent-recipes {
+    position: relative;
+  }
+}

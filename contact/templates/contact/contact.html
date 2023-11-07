@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+	<h1 class="header">Ubicanos</h1>
+</div>
+
+<div class="container contact-content">
+	<div class="map contact-item">
+		<iframe class="contact-rounded mapframe"
+			src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14882.985603036981!2d-101.6333348595703!3d21.16248830978936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1699219113375!5m2!1ses!2smx"
+			width="455" height="440" style="border:0;" allowfullscreen="" loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</div>
+	<div class="contact contact-item">
+		<div>
+			<p>Envianos tu comentarios en breve te responderemos.</p>
+		</div>
+		<div class="form">
+			<form action="" method="POST">
+				{% csrf_token %}
+				<input class="contact-rounded contact-entry" type="text" name="" placeholder="Nombre" required>
+				<input class="contact-rounded contact-entry" type="email" name="" placeholder="Email" required>
+				<textarea class="contact-rounded contact-entry content-area" name="Content" cols="30" rows="10" required></textarea>
+				<input class="contact-rounded contact-entry contact-button" type="submit" value="Enviar">
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

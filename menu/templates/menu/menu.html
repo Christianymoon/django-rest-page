@@ -1,0 +1,62 @@
+{% extends 'home/base.html '%}
+
+{% load static %}
+
+{% block content %}
+
+<div class="menu-section-content ">
+  <section class="menu-side">
+    <div class="menu-cateogryes">
+      <div>
+        <h1 class="header">Menú</h1>
+      </div>
+      <div class="accordion">
+        {% for category in categoryes %}
+        <div class="accordion-menu">
+          <button class="accordion-obj">
+            <div class="accordion-name">{{ category.name }}</div>
+            <div class=active><i class="bi bi-menu-up"></i></div>
+            <div class=accordion-ico><i class="bi bi-menu-down"></i></div>
+          </button>
+          <div class="accordion-content">
+            <ul class="list-recipes-group">
+              <a class="list-link" href="{% url 'Category' category.id %}">
+                <li class="list-item">Todo de {{category.name}}</li>
+              </a>
+              {% for recipe in category.recipe_set.all %}
+              <a class="list-link" href="{% url 'Recipe' category.id recipe.id %}">
+                <li class="list-item">{{ recipe }}</li>
+              </a>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </section>
+  <section class="content-side">
+
+    {% for category in categoryes %}
+    <div class="menu-category-section">
+      <h1 class="menu-title">{{ category }}</h1>
+      {% for recipe in category.recipe_set.all %}
+      <div class="recipe-card-menu">
+        <div class="recipe-image">
+          <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}">
+        </div>
+        <div class="recipe-data">
+          <div class="recipe-title">{{ recipe.name }}</div>
+          <div class="recipe-description">{{ recipe.description }}</div>
+        </div>
+        <div class="recipe-price">$ {{ recipe.price }} MXN</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+
+  </section>
+</div>
+
+
+
+{% endblock %}

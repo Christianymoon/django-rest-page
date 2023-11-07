@@ -1,0 +1,47 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="main-photo">
+  <img src="{% static 'home/img/main.jpg' %}" alt="main image">
+</div>
+
+<div class="container hero">
+  <div class="icon hero-item">
+    <img src="{% static 'home/img/gold_icon.png' %}" alt="vr buffet icon">
+  </div>
+  <div class="pharagraph hero-item">
+    <p>Contamos con la mejor comida de la ciudad, mira lo que tenemos para ti.</p>
+  </div>
+  <div class="menu-button hero-item">
+    <a href="{% url 'Menu' %}" class="button-main">
+      <div>Menú</div>
+    </a>
+  </div>
+</div>
+
+<div class="container recent-recipes">
+  <div class="row">
+    {% for recipe in recent_recipes %}
+    <a class="recipe-card col-md-4" href="{% url 'Recipe' recipe.recipe_category.id recipe.id %}">
+      <div class="card">
+        <div class="image-card">
+          <img src="{{ recipe.image.url }}" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ recipe.name }}</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ recipe.description }}</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text">$ {{ recipe.price }}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
