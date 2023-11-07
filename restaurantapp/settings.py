@@ -153,7 +153,7 @@ else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'media')
   
 
-
+SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
