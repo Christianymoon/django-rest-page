@@ -25,8 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='renderinsecure90909090')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# 'RENDER' not in os.environ
+DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
 
@@ -88,7 +87,7 @@ WSGI_APPLICATION = 'restaurantapp.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/restaurantapp',
+        default='postgres://chris:YDWlLbCBllbqy4HSqRaFAfju5URs2sJQ@dpg-cl59naql7jac73cfkar0-a/restaurantapp_pral',
         conn_max_age=600
     )
     
